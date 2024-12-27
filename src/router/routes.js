@@ -9,6 +9,14 @@ const routes = [
         component: () => import('../pages/Table/TablePage.vue'),
       },
       {
+        path: '/setting',
+        component: () => import('../pages/Setting/SettingPage.vue'),
+      },
+      {
+        path: '/todo',
+        component: () => import('../pages/Todo/TodoPage.vue'),
+      },
+      {
         path: '/camera',
         component: () => import('../pages/Camera/CameraPage.vue'),
       },

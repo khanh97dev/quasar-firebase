@@ -1,0 +1,143 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "allowJs": true,
+    "resolveJsonModule": false,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "module": "CommonJS",
+    "noEmit": true,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "paths": {
+      "src": [
+        "./src"
+      ],
+      "src/*": [
+        "./src/*"
+      ],
+      "app": [
+        "./.."
+      ],
+      "app/*": [
+        "./*"
+      ],
+      "components": [
+        "./src/components"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "layouts": [
+        "./src/layouts"
+      ],
+      "layouts/*": [
+        "./src/layouts/*"
+      ],
+      "pages": [
+        "./src/pages"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ],
+      "assets": [
+        "./src/assets"
+      ],
+      "assets/*": [
+        "./src/assets/*"
+      ],
+      "boot": [
+        "./src/boot"
+      ],
+      "boot/*": [
+        "./src/boot/*"
+      ],
+      "stores": [
+        "./src/stores"
+      ],
+      "stores/*": [
+        "./src/stores/*"
+      ],
+      "#q-app": [
+        "./node_modules/@quasar/app-vite/types/index.d.ts"
+      ],
+      "#q-app/wrappers": [
+        "./node_modules/@quasar/app-vite/types/app-wrappers.d.ts"
+      ],
+      "#q-app/bex/background": [
+        "./node_modules/@quasar/app-vite/types/bex/entrypoints/background.d.ts"
+      ],
+      "#q-app/bex/content": [
+        "./node_modules/@quasar/app-vite/types/bex/entrypoints/content.d.ts"
+      ],
+      "#q-app/bex/private/bex-bridge": [
+        "./node_modules/@quasar/app-vite/types/bex/bex-bridge.d.ts"
+      ],
+      "@capacitor-community/barcode-scanner": [
+        "./src-capacitor/node_modules/@capacitor-community/barcode-scanner"
+      ],
+      "@capacitor-community/barcode-scanner/*": [
+        "./src-capacitor/node_modules/@capacitor-community/barcode-scanner/*"
+      ],
+      "@capacitor-community/camera-preview": [
+        "./src-capacitor/node_modules/@capacitor-community/camera-preview"
+      ],
+      "@capacitor-community/camera-preview/*": [
+        "./src-capacitor/node_modules/@capacitor-community/camera-preview/*"
+      ],
+      "@capacitor/android": [
+        "./src-capacitor/node_modules/@capacitor/android"
+      ],
+      "@capacitor/android/*": [
+        "./src-capacitor/node_modules/@capacitor/android/*"
+      ],
+      "@capacitor/app": [
+        "./src-capacitor/node_modules/@capacitor/app"
+      ],
+      "@capacitor/app/*": [
+        "./src-capacitor/node_modules/@capacitor/app/*"
+      ],
+      "@capacitor/cli": [
+        "./src-capacitor/node_modules/@capacitor/cli"
+      ],
+      "@capacitor/cli/*": [
+        "./src-capacitor/node_modules/@capacitor/cli/*"
+      ],
+      "@capacitor/core": [
+        "./src-capacitor/node_modules/@capacitor/core"
+      ],
+      "@capacitor/core/*": [
+        "./src-capacitor/node_modules/@capacitor/core/*"
+      ],
+      "@capacitor/filesystem": [
+        "./src-capacitor/node_modules/@capacitor/filesystem"
+      ],
+      "@capacitor/filesystem/*": [
+        "./src-capacitor/node_modules/@capacitor/filesystem/*"
+      ],
+      "@capacitor/preferences": [
+        "./src-capacitor/node_modules/@capacitor/preferences"
+      ],
+      "@capacitor/preferences/*": [
+        "./src-capacitor/node_modules/@capacitor/preferences/*"
+      ]
+    }
+  },
+  "include": [
+    "./**/*.d.ts",
+    "./**/*",
+    "./**/*.js"
+  ],
+  "exclude": [
+    "./dist",
+    "./node_modules",
+    "./src-capacitor",
+    "./src-cordova",
+    "./quasar.config.*.temporary.compiled*"
+  ]
+}

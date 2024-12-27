@@ -25,6 +25,7 @@ import { Notify } from 'quasar'
 import { ref, reactive, defineComponent, onBeforeUnmount, onMounted } from 'vue'
 import { CameraPreview } from '@capacitor-community/camera-preview'
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner'
+import { firebaseAuth } from 'boot/firebase'
 
 export default defineComponent({
   setup() {

@@ -52,8 +52,8 @@
           </q-btn>
 
           <q-btn round flat>
-            <q-avatar size="26px">
-              <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+            <q-avatar v-if="user" size="26px">
+              <img :src="user.avatar" />
             </q-avatar>
             <q-tooltip>Account</q-tooltip>
           </q-btn>
@@ -150,15 +150,16 @@
             class="q-mr-sm GPLAY__sticky-help"
           />
           <q-space />
-          <q-btn icon="help" color="grey-3" dense flat size="12px" class="GPLAY__sticky-help" />
+          <q-btn v-if="false" icon="help" color="grey-3" dense flat class="GPLAY__sticky-help" />
           <!-- TODO to help -->
           <q-btn
             icon="settings"
-            color="grey-3"
+            color="white"
             dense
             flat
+            round
             class="GPLAY__sticky-settings q-ml-md"
-            size="12px"
+            to="/setting"
           />
           <!-- TODO open setting -->
         </q-toolbar>
@@ -167,8 +168,8 @@
 
     <q-footer :class="{ 'bg-grey-8': $q.dark.mode, 'text-grey-3': $q.dark.mode }">
       <q-tabs align="justify" v-model="tab">
-        <q-route-tab icon="pages" exact name="home" label="Home" to="/home" />
-        <q-route-tab icon="pages" exact name="videos" label="Videos" to="/videos" />
+        <q-route-tab icon="list" exact name="todo" label="Todo" to="/todo" />
+        <q-route-tab icon="music_video" exact name="videos" label="Videos" to="/videos" />
         <q-route-tab icon="pages" exact name="articles" label="Articles" to="/articles" />
       </q-tabs>
     </q-footer>
@@ -177,10 +178,12 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, defineComponent, onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useUserStore } from 'stores/user'
 
-export default {
-  name: 'GooglePlayLayout',
+export default defineComponent({
+  name: 'MainLayout',
 
   data: () => ({
     tab: 'images',
@@ -190,12 +193,15 @@ export default {
     const leftDrawerOpen = ref(false)
     const search = ref('')
     const storage = ref(0.26)
+    const userStore = useUserStore()
+    const { user } = storeToRefs(userStore)
 
     function toggleLeftDrawer() {
       leftDrawerOpen.value = !leftDrawerOpen.value
     }
 
     return {
+      user,
       leftDrawerOpen,
       search,
       storage,
@@ -205,7 +211,7 @@ export default {
           icon: 'list',
           id: 'green-item',
           bg: 'bg-green',
-          to: 'table',
+          to: '/table',
           active: true,
         },
         {
@@ -213,7 +219,7 @@ export default {
           icon: 'camera',
           id: 'red-item',
           bg: 'bg-red-7',
-          to: 'camera',
+          to: '/camera',
           active: false,
         },
         {
@@ -251,7 +257,7 @@ export default {
       toggleLeftDrawer,
     }
   },
-}
+})
 </script>
 
 <style lang="sass">
